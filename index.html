@@ -14,7 +14,15 @@
     
 
         <!-- Header - block -->
-
+        <div class="backdrop is-hidden" data-backdrop>
+            <div class="modal">
+                <p>form will be here</p>
+                
+                    <button class="close-btn" data-modal-close>x</button>
+                
+                
+            </div>
+        </div>
     
         <header class="header">
             <div class="container border">
@@ -53,7 +61,7 @@
         <main class="main-block">
             <section class="title-section">
                 <h1>Эффективные решения <br/> для вашего бизнеса</h1>
-                <button type="button" class="get-btn">Заказать услугу</button>
+                <button type="button" class="get-btn" data-modal-open>Заказать услугу</button>
             </section>
 
             
@@ -373,6 +381,7 @@
             </div>
             
         </footer>
-    
+
+<script src="./js/modal.js"></script>
 </body>
 </html>
