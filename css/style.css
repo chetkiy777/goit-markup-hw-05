@@ -152,23 +152,36 @@ h2 {
 }
 
 .nav-link {
+  position: relative;
+
   display: inline-block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   color: var(--main-text-color);
-  padding-top: 32px;
-  padding-bottom: 32px;
   letter-spacing: 0.02em;
+
+  transition: color, 250ms;
 }
 
 .active {
   color: var(--accent-color);
 }
 
-.nav-link.active {
-  box-sizing: border-box;
-  border-bottom: 4px solid var(--accent-color);
+.nav-link.active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  content: '';
+
+  height: 4px;
+  width: 100%;
+
+  background-color: var(--accent-color);
 }
 
 .nav-link:hover,
@@ -208,7 +221,10 @@ h2 {
   font-size: 14px;
   line-height: 1.15;
   letter-spacing: 0.02em;
+
   color: var(--secondary-text-color);
+
+  transition: color, 250ms;
 }
 
 .contacts-mail:hover,
@@ -216,13 +232,13 @@ h2 {
   color: var(--accent-color);
 }
 
-/* .contacts-mail:hover .mobile-icon, */
+.contacts-mail:hover .mobile-icon,
 .contacts-number:hover .mobile-icon {
   fill: var(--accent-color);
 }
 
-.contacts-mail:hover .mail-icon {
-  /* .contacts-number:hover .mail-icon { */
+.contacts-mail:hover .mail-icon,
+.contacts-number:hover .mail-icon {
   fill: var(--accent-color);
 }
 
@@ -408,9 +424,12 @@ h2 {
   display: inline-flex;
   height: 44px;
   width: 44px;
+
   border-radius: 50%;
   padding: 12px;
   fill: #afb1b8;
+
+  transition: fill, 250ms;
 }
 
 .team-link:hover,
@@ -427,16 +446,25 @@ h2 {
   margin-top: 50px;
 }
 
+.client-item {
+  width: 170px;
+  height: 92px;
+}
+
 .client-item .client-link {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
   background-color: #ffffff;
   background-size: contain;
   background-position: center;
   fill: #afb1b8;
+
+  transition: fill, 250ms;
 }
 
 .client-link:hover,
@@ -463,7 +491,7 @@ h2 {
   margin-right: 8px;
   border: none;
   outline: none;
-  background: var(--background-light-color);
+  background-color: var(--background-light-color);
   border-radius: 4px;
 
   padding: 6px 25px 6px 24px;
@@ -474,14 +502,17 @@ h2 {
   line-height: 1.6;
   text-align: center;
   color: var(--main-text-color);
+
+  transition: color, 250ms;
+  transition: box-shadow, 250ms;
+  transition: background-color, 250ms;
 }
 
 .filter-btn:focus,
 .filter-btn:hover {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
   color: var(--main-white-color);
 }
 
@@ -492,6 +523,8 @@ h2 {
 
 .works-list-item {
   box-sizing: border-box;
+
+  transition: box-shadow, 250ms;
 }
 
 .works-item-thumb {
@@ -511,7 +544,9 @@ h2 {
 
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
+
   transition: transform, 250ms;
+  transition: opacity, 250ms;
 }
 
 .works-item-thumb:hover::before {
@@ -528,6 +563,8 @@ h2 {
   padding-right: 24px;
 
   opacity: 0;
+
+  transition: opacity, 250ms;
 }
 
 .works-list-item:hover .drop-item {
@@ -582,11 +619,6 @@ h2 {
   color: var(--secondary-text-color);
 }
 
-.client-item {
-  width: 170px;
-  height: 92px;
-}
-
 /* Contacts - Page, Main block */
 
 /* Footer - block */
@@ -622,17 +654,22 @@ h2 {
 }
 
 .footer-mail {
+  margin-top: 9px;
+  margin-bottom: 9px;
+
   font-size: 14px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
-  margin-top: 9px;
-  margin-bottom: 9px;
+
+  transition: color, 250ms;
 }
 
 .footer-number {
   font-size: 14px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color, 250ms;
 }
 
 .footer-mail:focus,
@@ -677,6 +714,8 @@ h2 {
   border-radius: 50%;
   padding: 12px;
   fill: var(--main-white-color);
+
+  transition: background-color, 250ms;
 }
 
 .welcome-link:focus,
