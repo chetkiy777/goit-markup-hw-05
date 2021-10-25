@@ -77,6 +77,7 @@ h2 {
   position: fixed;
   height: 100%;
   width: 100%;
+  z-index: 2;
 
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -91,9 +92,14 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* z-index: 2; */
 
   height: 581px;
   width: 528px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   background-color: var(--main-white-color);
 }
 
@@ -157,6 +163,7 @@ h2 {
   display: inline-block;
   padding-top: 32px;
   padding-bottom: 32px;
+  z-index: 1;
 
   font-weight: 500;
   font-size: 14px;
@@ -430,6 +437,7 @@ h2 {
   fill: #afb1b8;
 
   transition: fill, 250ms;
+  transition: background-color, 250ms;
 }
 
 .team-link:hover,
@@ -465,6 +473,7 @@ h2 {
   fill: #afb1b8;
 
   transition: fill, 250ms;
+  transition: border-color, 250ms;
 }
 
 .client-link:hover,
@@ -549,7 +558,7 @@ h2 {
   transition: opacity, 250ms;
 }
 
-.works-item-thumb:hover::before {
+.works-list-item:hover .works-item-thumb::before {
   transform: translateY(0);
   opacity: 1;
 }
