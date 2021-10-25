@@ -238,17 +238,29 @@ h2 {
 }
 
 .contacts-mail:hover,
-.contacts-number:hover {
+.contacts-number:hover,
+.contacts-mail:focus,
+.contacts-number:focus {
   color: var(--accent-color);
 }
 
-.contacts-mail:hover .mobile-icon,
+/* .contacts-mail:hover .mobile-icon, */
 .contacts-number:hover .mobile-icon {
   fill: var(--accent-color);
 }
 
-.contacts-mail:hover .mail-icon,
-.contacts-number:hover .mail-icon {
+/* .contacts-mail:focus .mobile-icon, */
+.contacts-number:focus .mobile-icon {
+  fill: var(--accent-color);
+}
+
+.contacts-mail:hover .mail-icon {
+  /* .contacts-number:hover .mail-icon { */
+  fill: var(--accent-color);
+}
+
+.contacts-mail:focus .mail-icon {
+  /* .contacts-number:focus .mail-icon { */
   fill: var(--accent-color);
 }
 
@@ -410,6 +422,7 @@ h2 {
 }
 
 .team-item-title {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   color: var(--main-text-color);
@@ -534,9 +547,7 @@ h2 {
 }
 
 .works-list-item {
-  box-sizing: border-box;
-
-  transition: box-shadow, 250ms;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .works-item-thumb {
@@ -544,50 +555,31 @@ h2 {
   overflow: hidden;
 }
 
-.works-item-thumb::before {
-  content: '';
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform: translateY(100%);
-
-  background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.works-list-item:hover .works-item-thumb::before {
+.works-list-item:hover .drop-item {
   transform: translateY(0);
   opacity: 1;
 }
 
 .drop-item {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translateY(-50%);
-  padding-left: 24px;
-  padding-right: 24px;
+  height: 100%;
+  width: 100%;
 
-  opacity: 0;
+  transform: translateY(100%);
+  padding: 63px 25px;
 
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.works-list-item:hover .drop-item {
-  opacity: 1;
-}
-
-.drop-text {
   font-size: 18px;
-  line-height: 1.56;
+  line-height: 1.55;
   letter-spacing: 0.03em;
   color: var(--main-white-color);
+
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .works-list-item:hover {
@@ -693,6 +685,7 @@ h2 {
 
 .inline {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-info {
