@@ -102,10 +102,12 @@ h2 {
   top: 10px;
   right: 10px;
 
-  height: 30px;
-  width: 30px;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
   border-radius: 50%;
-
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -162,6 +164,11 @@ h2 {
 
 .active {
   color: var(--accent-color);
+}
+
+.nav-link.active {
+  box-sizing: border-box;
+  border-bottom: 4px solid var(--accent-color);
 }
 
 .nav-link:hover,
@@ -324,6 +331,34 @@ h2 {
   margin-top: 50px;
 }
 
+.work-type-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-item-thumb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.thumb-text {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-white-color);
+}
+
 .team-section {
   background: var(--background-light-color);
   padding: 94px 0 94px 0;
@@ -406,6 +441,7 @@ h2 {
 
 .client-link:hover,
 .client-link:focus {
+  border-color: var(--accent-color);
   fill: var(--accent-color);
 }
 
